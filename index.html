@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+  <title>SOAP</title>
+  <meta name="description" content="Helena Roig project">
+  
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+<main>
+ 
+<script>
+$(function(){
+
+  let imgs = [
+   
+   { url: "img/tele_0.jpg" },{ url: "img/tele_1.jpg" },{ url: "img/tele_2.jpg" },{ url: "img/tele_3.jpg" },{ url: "img/tele_4.jpg" },{ url: "img/tele_5.jpg" },{ url: "img/tele_6.jpg" },{ url: "img/tele_7.jpg" },{ url: "img/tele_8.jpg" },{ url: "img/tele_9.jpg" },{ url: "img/tele_10.jpg" },{ url: "img/tele_11.jpg" },{ url: "img/tele_12.jpg" },{ url: "img/tele_13.jpg" },{ url: "img/tele_14.jpg" },{ url: "img/tele_15.jpg" },{ url: "img/tele_16.jpg" },{ url: "img/tele_17.jpg" },{ url: "img/tele_18.jpg" },{ url: "img/tele_19.jpg" },{ url: "img/tele_20.jpg" },{ url: "img/tele_21.jpg" },{ url: "img/tele_22.jpg" },{ url: "img/tele_23.jpg" },{ url: "img/tele_24.jpg" },{ url: "img/tele_25.jpg" },{ url: "img/tele_26.jpg" },{ url: "img/tele_27.jpg" },{ url: "img/tele_28.jpg" },{ url: "img/tele_29.jpg" },{ url: "img/tele_30.jpg" },{ url: "img/tele_31.jpg" },{ url: "img/tele_32.jpg" },{ url: "img/tele_33.jpg" },{ url: "img/tele_34.jpg" },{ url: "img/tele_35.jpg" },{ url: "img/tele_36.jpg" },{ url: "img/tele_37.jpg" },{ url: "img/tele_38.jpg" },{ url: "img/tele_39.jpg" },{ url: "img/tele_40.jpg" },{ url: "img/tele_41.jpg" },{ url: "img/tele_42.jpg" },{ url: "img/tele_43.jpg" },{ url: "img/tele_44.jpg" },{ url: "img/tele_45.jpg" },{ url: "img/tele_46.jpg" },{ url: "img/tele_47.jpg" },{ url: "img/tele_48.jpg" },{ url: "img/tele_49.jpg" },{ url: "img/tele_50.jpg" },{ url: "img/tele_51.jpg" },{ url: "img/tele_52.jpg" },{ url: "img/tele_53.jpg" },{ url: "img/tele_54.jpg" },{ url: "img/tele_55.jpg" },
+  ];
+  
+  function shuffle(a) {
+      var j, x, i;
+      for (i = a.length - 1; i > 0; i--) {
+          j = Math.floor(Math.random() * (i + 1));
+          x = a[i];
+          a[i] = a[j];
+          a[j] = x;
+      }
+      return a;
+  }
+
+  shuffle(imgs);
+
+  var width = Math.floor(Math.random()*25 + 25);
+  var i = 0;
+
+  $("main").prepend("<figure style='max-width:"+width+"%'><img src='"+imgs[i].url+"'/>");
+  
+  i++;
+  
+$("main").on("click",function(){
+
+   
+    var random = Math.floor(Math.random()*imgs.length),
+    	width = Math.floor(Math.random()*25 + 25),
+    	src = imgs[random];
+
+		if(i < imgs.length){
+		
+		    $("main").prepend("<figure style='max-width:"+width+"%'><img src='"+imgs[i].url+"'/>");
+		    i++;
+		
+		    $('img').on('dragstart', function(event) { event.preventDefault(); });
+		    
+		
+		}else{
+		       
+		       $("main").prepend("<figure style='max-width:"+width+"%'><img src='assets/last.jpg'/></figure>");
+		
+		}
+		
+});
+
+  $('img').on('dragstart', function(event) { event.preventDefault(); });
+  
+
+});
+</script>
+
+</main>
