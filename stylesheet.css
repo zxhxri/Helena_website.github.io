@@ -24,6 +24,20 @@
     margin:7px 0px 0px 7px;
   }
 
+.description{
+    position: fixed;
+    right:0;
+    width: 17%;
+    background-color: white;
+    overflow: scroll;
+}
+
+.description p{
+    font-family: HelveticaNeue;
+    padding: 10px;
+    font-size: 14px;
+}
+
 
   img{
     position: relative;
@@ -33,8 +47,12 @@
     margin-bottom:1px;
   }
   
-  @media screen and (max-width:700px){
-	  html,body{
-		  font:12px arial;
+  @media screen and (max-width:800px){
+	  
+      .description{
+          width: 40%;
+      }
+      .description p{
+		  font-size:10px;
 	  }
   }
